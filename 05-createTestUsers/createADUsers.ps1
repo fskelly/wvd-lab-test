@@ -13,3 +13,4 @@ foreach ($user in $users)
 ##domain join user
 $domainJoinUserName = "domainjoin"
 New-AdUser -Name $domainJoinUserName  -Enabled $true -ChangePasswordAtLogon $false -AccountPassword (ConvertTo-SecureString "P@ssw0rd" -AsPlainText -force) -passThru
+Add-ADGroupMember -Members (get-aduser -Identity $domainJoinUserName) -Identity (Get-ADGroup -Identity "Domain Admins")
