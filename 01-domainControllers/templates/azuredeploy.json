@@ -112,7 +112,7 @@
         },
         "subnetName": {
             "type": "string",
-            "defaultValue": "AADS Subnet",
+            "defaultValue": "AADS-Subnet",
             "metadata": {
                 "description": "Subnet name."
             }
