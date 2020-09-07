@@ -70,7 +70,7 @@
         },
         "virtualNetworkAddressRange": {
             "type": "string",
-            "defaultValue": "10.0.0.0/23",
+            "defaultValue": "10.1.0.0/23",
             "metadata": {
                 "description": "Virtual network address range."
             }
