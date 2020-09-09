@@ -2,6 +2,8 @@
 $location = ""
 $resourceGroup = ""
 $subid = ""
+Select-AzSubscription -Subscription $subid
+
 $storageType = "" ##filestorage for premium, StorageV2 for Standard
 $sku = ""
 $wvdStorageAccountName = ""
@@ -26,7 +28,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 .\CopyToPSPath.ps1 
 #Import AzFilesHybrid module
 Import-Module -Name AzFilesHybrid
-#Login with an Azure AD credential that has either storage account owner or contributer Azure role assignment
+#Login with an Azure AD credential that has either storage account owner or contributor Azure role assignment
 Connect-AzAccount
 #Select the target subscription for the current session
 Select-AzSubscription -SubscriptionId $subid 

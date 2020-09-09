@@ -1,5 +1,4 @@
 Import-Module ActiveDirectory
-$domainName = (Get-ADDomain).dnsroot
 $ou = ""
 $domainRoot = (Get-ADRootDSE).defaultNamingContext
 New-ADOrganizationalUnit -Name $ou -Path $domainRoot -ProtectedFromAccidentalDeletion $False

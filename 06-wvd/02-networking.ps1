@@ -1,6 +1,7 @@
 $location = ""
 $resourceGroup = ""
 $subid = ""
+Select-AzSubscription -Subscription $subid
 
 ##create new resource group
 New-AzResourceGroup -Name $resourceGroup -Location $location

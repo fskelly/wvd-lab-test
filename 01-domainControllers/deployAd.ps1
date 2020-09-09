@@ -2,10 +2,11 @@
 $location = ""
 $resourceGroup = ""
 $subid = ""
+Select-AzSubscription -Subscription $subid
 
 New-AzResourceGroup -Name $resourceGroup -Location $location #use this command when you need to create a new resource group for your deployment
 
-##if you want to use a parmaeter file
+##if you want to use a parameter file
 #New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/domainControllers/templates/azuredeploy.json -TemplateParameterUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/domainControllers/templates/parameters.json
 
 ##if you want to provide parameters - prompted with ELB
