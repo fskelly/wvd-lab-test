@@ -9,7 +9,8 @@
 ## Installation  
 
 ```powershell
-wget -O c:\users\$env:USERNAME\desktop\azureadconnect.msi https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE05A/AzureADConnect.msi
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest -Uri "https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE05A/AzureADConnect.msi" -OutFile "c:\users\$env:USERNAME\desktop\azureadconnect.msi"
 cd c:\users\$env:USERNAME\desktop\
 .\azureadconnect.msi
 ```
