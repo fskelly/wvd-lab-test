@@ -5,13 +5,15 @@ $subid = ""
 Select-AzSubscription -Subscription $subid
 
 $storageType = "" ##filestorage for premium, StorageV2 for Standard
-$sku = ""
+$sku = ""  ## Standard_GRS / Standard_LRS
 $wvdStorageAccountName = ""
 $wvdStorageAccount = new-azstorageaccount -kind $storageType -location $location -resourceGroup $resourceGroup -sku $sku -accountName $wvdStorageAccountName
 
 ## create share
 $shareName = ""
-New-AzRmStorageShare -ResourceGroupName $resourceGroup -StorageAccountName $wvdStorageAccount.StorageAccountName -Name $shareName
+##New-AzRmStorageShare -ResourceGroupName $resourceGroup -StorageAccountName $wvdStorageAccount.StorageAccountName -Name $shareName
+## Update for az cmdlets
+New-AzStorageShare -Name $shareName -Context $wvdStorageAccount.Context
 
 ## enable AD DS Auth - https://docs.microsoft.com/en-us/azure/storage/files/storage-files-identity-ad-ds-enable
 ## run on AD Joined machine with user account with HIGH creds

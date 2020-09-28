@@ -1,6 +1,7 @@
 $location = ""
 $resourceGroup = ""
 $subid = ""
+Select-AzSubscription -Subscription $subid
 
 #from previous script
 $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourceGroup
