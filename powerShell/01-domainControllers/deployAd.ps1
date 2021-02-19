@@ -10,7 +10,7 @@ New-AzResourceGroup -Name $resourceGroup -Location $location #use this command w
 #New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/domainControllers/templates/azuredeploy.json -TemplateParameterUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/domainControllers/templates/parameters.json
 
 ##if you want to provide parameters - prompted with ELB
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/01-domainControllers/templates/azuredeploy.json
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/powerShell/01-domainControllers/templates/azuredeploy.json
 
 #without ELB and using Bastion
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/01-domainControllers/templates/azuredeployWithoutELB.json
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateUri https://raw.githubusercontent.com/fskelly/wvd-lab-test/master/powerShell/01-domainControllers/templates/azuredeployWithoutELB.json
