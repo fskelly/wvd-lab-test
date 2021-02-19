@@ -30,13 +30,20 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 .\CopyToPSPath.ps1 
 #Import AzFilesHybrid module
 Import-Module -Name AzFilesHybrid
+
+if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+}
 #Login with an Azure AD credential that has either storage account owner or contributor Azure role assignment
 Connect-AzAccount
 #Select the target subscription for the current session
 Select-AzSubscription -SubscriptionId $subid 
 Join-AzStorageAccountForAuth -ResourceGroupName $ResourceGroup -StorageAccountName $wvdStorageAccountName -DomainAccountType ComputerAccount #-OrganizationalUnitDistinguishedName "<ou-distinguishedname-here>" # If you don't provide the OU name as an input parameter, the AD identity that represents the storage account is created under the root directory.
 #You can run the Debug-AzStorageAccountAuth cmdlet to conduct a set of basic checks on your AD configuration with the logged on AD user. This cmdlet is supported on AzFilesHybrid v0.1.2+ version. For more details on the checks performed in this cmdlet, see Azure Files Windows troubleshooting guide.
-Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGroupName $ResourceGroupName -Verbose
+Debug-AzStorageAccountAuth -StorageAccountName $wvdStorageAccountName -ResourceGroupName $ResourceGroup -Verbose
 
 # Get the target storage account
 $wvdStorageAccountCheck = Get-AzStorageAccount -ResourceGroupName $resourceGroup -Name $wvdStorageAccountName
