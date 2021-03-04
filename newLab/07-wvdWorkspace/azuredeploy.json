@@ -1,0 +1,59 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "type": "String",
+            "metadata": {
+                "description": "Workspace Name"
+            },
+            "defaultValue": "Workspace-01"
+        },
+        "workspaceDescription": {
+            "defaultValue": "Workspace-01",
+            "type": "String",
+            "metadata": {
+                "description": "Workspace Description"
+            },
+        },
+        "location": {
+            "defaultValue": "eastus",
+            "type": "String"
+        },
+        "friendlyName": {
+            "defaultValue": "Windows 10 20H2 Workspace",
+            "type": "String"
+        },
+        "appGroups": {
+            "defaultValue": [
+            ],
+            "type": "Array"
+        },
+        "tags": {
+            "defaultValue": {
+            },
+            "type": "Object"
+        },
+        "apiVersion": {
+            "defaultValue": "2019-12-10-preview",
+            "type": "String",
+            "metadata": {
+                "description": "WVD api version"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.DesktopVirtualization/workspaces",
+            "apiVersion": "[parameters('apiVersion')]",
+            "name": "[parameters('workspaceName')]",
+            "location": "[parameters('location')]",
+            "tags": "[parameters('tags')]",
+            "properties": {
+                "friendlyName": "[parameters('friendlyName')]",
+                "description": "[parameters('workspaceDescription')]",
+                "applicationGroupReferences": "[parameters('appGroups')]"
+            }
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "artifactsLocation": {
+            "value": "https://wvdportalstorageblob.blob.core.windows.net/galleryartifacts/Configuration_1-25-2021.zip"
+        },
+        "nestedTemplatesLocation": {
+            "value": "https://catalogartifact.azureedge.net/publicartifacts/Microsoft.Hostpool-ARM-1.0.22-preview/"
+        },
+        "hostpoolName": {
+            "value": ""
+        },
+        "hostpoolToken": {
+            "value": ""
+        },
+        "vmAdministratorAccountUsername": {
+            "value": ""
+        },
+        "vmAdministratorAccountPassword": {
+            "value": ""
+        },
+        "administratorAccountUsername": {
+            "value": ""
+        },
+        "administratorAccountPassword": {
+            "value": ""
+        },
+        "hostpoolResourceGroup": {
+            "value": ""
+        },
+        "hostpoolProperties": {
+            "value": {
+                "friendlyName": "",
+                "description": "",
+                "hostPoolType": "",
+                "personalDesktopAssignmentType": null,
+                "applicationGroupReferences": [
+                    ""
+                ],
+                "customRdpProperty": "",
+                "maxSessionLimit": 99999,
+                "loadBalancerType": "BreadthFirst",
+                "validationEnvironment": false,
+                "ring": null,
+                "registrationInfo": {
+                    "expirationTime": "",
+                    "token": "",
+                    "resetToken": false,
+                    "registrationTokenOperation": "None"
+                },
+                "vmTemplate": "{\"domain\":\"example.com\",\"galleryImageOffer\":\"office-365\",\"galleryImagePublisher\":\"MicrosoftWindowsDesktop\",\"galleryImageSKU\":\"20h2-evd-o365pp\",\"imageType\":\"Gallery\",\"imageUri\":null,\"customImageId\":null,\"namePrefix\":\"pool01\",\"osDiskType\":\"StandardSSD_LRS\",\"useManagedDisks\":true,\"vmSize\":{\"id\":\"Standard_D2s_v3\",\"cores\":2,\"ram\":8},\"galleryItemId\":\"microsoftwindowsdesktop.office-36520h2-evd-o365pp\"}",
+                "preferredAppGroupType": "Desktop",
+                "migrationRequest": null,
+                "cloudPcResource": false,
+                "startVMOnConnect": false,
+                "ssoadfsAuthority": null,
+                "ssoClientId": null,
+                "ssoClientSecretKeyVaultPath": null,
+                "ssoSecretType": null,
+                "objectId": "a5b2b3c1-8273-4f15-95a3-6ec87d6ff2df"
+            }
+        },
+        "hostpoolLocation": {
+            "value": "westus"
+        },
+        "createAvailabilitySet": {
+            "value": true
+        },
+        "vmInitialNumber": {
+            "value": 0
+        },
+        "vmResourceGroup": {
+            "value": ""
+        },
+        "vmLocation": {
+            "value": "westus"
+        },
+        "vmSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "vmNumberOfInstances": {
+            "value": 3
+        },
+        "vmNamePrefix": {
+            "value": ""
+        },
+        "vmImageType": {
+            "value": "Gallery"
+        },
+        "vmDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "vmUseManagedDisks": {
+            "value": true
+        },
+        "existingVnetName": {
+            "value": ""
+        },
+        "existingSubnetName": {
+            "value": ""
+        },
+        "virtualNetworkResourceGroupName": {
+            "value": ""
+        },
+        "createNetworkSecurityGroup": {
+            "value": false
+        },
+        "domain": {
+            "value": ""
+        },
+        "ouPath": {
+            "value": ""
+        },
+        "aadJoin": {
+            "value": false
+        },
+        "intune": {
+            "value": false
+        },
+        "availabilitySetTags": {
+            "value": {}
+        },
+        "networkInterfaceTags": {
+            "value": {}
+        },
+        "networkSecurityGroupTags": {
+            "value": {}
+        },
+        "virtualMachineTags": {
+            "value": {}
+        },
+        "imageTags": {
+            "value": {}
+        },
+        "deploymentId": {
+            "value": "cacb18b7-bf31-4004-a2f4-2a849d862041"
+        },
+        "apiVersion": {
+            "value": "2019-12-10-preview"
+        },
+        "vmGalleryImageOffer": {
+            "value": "office-365"
+        },
+        "vmGalleryImagePublisher": {
+            "value": "MicrosoftWindowsDesktop"
+        },
+        "vmGalleryImageSKU": {
+            "value": "20h2-evd-o365pp"
+        }
+    }
+}
